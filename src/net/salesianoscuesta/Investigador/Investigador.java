@@ -36,4 +36,18 @@ public abstract class Investigador {
         this.sueldo = sueldo;
     }
 
+    // Muestra los datos del cientifico
+    public String identificacion() {
+        return "Nombre: " + nombre
+                + "\nEspecialidad: " + especialidad
+                + "\nSueldo: " + sueldo + "€";
+    }
+
+    // Suma y resta de 2 valores recibidos por parametro
+    public String calculoBasico(int a, int b) {
+        int suma = a + b;
+        int resta = a - b;
+        return "Suma: " + suma + " | Resta: " + resta;
+    }
+
 }

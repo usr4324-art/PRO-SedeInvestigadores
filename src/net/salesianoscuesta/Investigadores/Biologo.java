@@ -30,4 +30,23 @@ public class Biologo extends Investigador {
         return "El sueldo es correcto.";
     }
 
+    // Ordena la lista por numero de caracteres y elimina el mayor
+    @Override
+    public String trabajar() {
+        if (especimenes.isEmpty()) {
+            return "No hay especimenes.";
+        }
+        for (int i = 0; i < especimenes.size() - 1; i++) {
+            for (int j = 0; j < especimenes.size() - 1 - i; j++) {
+                if (especimenes.get(j).length() > especimenes.get(j + 1).length()) {
+                    String aux = especimenes.get(j);
+                    especimenes.set(j, especimenes.get(j + 1));
+                    especimenes.set(j + 1, aux);
+                }
+            }
+        }
+        especimenes.remove(especimenes.size() - 1);
+        return especimenes.toString();
+    }
+
 }

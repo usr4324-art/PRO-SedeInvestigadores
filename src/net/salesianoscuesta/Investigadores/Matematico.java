@@ -45,6 +45,14 @@ public class Matematico extends Investigador {
         return mostrarMatriz();
     }
 
+    @Override
+    public String estadoSueldo() {
+        if (getSueldo() < 1800) {
+            return "Aviso: el sueldo es bajo, solicita un aumento.";
+        }
+        return "El sueldo es correcto.";
+    }
+
     private String mostrarMatriz() {
         String texto = "";
         for (int i = 0; i < matriz.length; i++) {

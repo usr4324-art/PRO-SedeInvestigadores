@@ -3,8 +3,9 @@ package net.salesianoscuesta.Investigadores;
 import java.util.ArrayList;
 
 import net.salesianoscuesta.Investigador.Investigador;
+import net.salesianoscuesta.Interfaz.TrabajoDual;
 
-public class Biologo extends Investigador {
+public class Biologo extends Investigador implements TrabajoDual {
 
     private ArrayList<String> especimenes;
 
@@ -46,6 +47,17 @@ public class Biologo extends Investigador {
             }
         }
         especimenes.remove(especimenes.size() - 1);
+        return especimenes.toString();
+    }
+
+    // En trabajo dual hace lo del quimico: voltear la lista
+    @Override
+    public String trabajoDual() {
+        for (int i = 0; i < especimenes.size() / 2; i++) {
+            String aux = especimenes.get(i);
+            especimenes.set(i, especimenes.get(especimenes.size() - 1 - i));
+            especimenes.set(especimenes.size() - 1 - i, aux);
+        }
         return especimenes.toString();
     }
 

@@ -50,4 +50,9 @@ public abstract class Investigador {
         return "Suma: " + suma + " | Resta: " + resta;
     }
 
+    // Cada tipo de investigador lo hace a su manera
+    public abstract String estadoSueldo();
+
+    public abstract String trabajar();
+
 }

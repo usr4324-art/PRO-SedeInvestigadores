@@ -6,4 +6,10 @@ public abstract class Investigador {
     private String especialidad;
     private double sueldo;
 
+    public Investigador(String nombre, String especialidad, double sueldo) {
+        this.nombre = nombre;
+        this.especialidad = especialidad;
+        this.sueldo = sueldo;
+    }
+
 }

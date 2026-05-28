@@ -17,4 +17,17 @@ public class Biologo extends Investigador {
         return especimenes;
     }
 
+    // Añade un especimen a la investigacion
+    public void anadirEspecimen(String especimen) {
+        especimenes.add(especimen);
+    }
+
+    @Override
+    public String estadoSueldo() {
+        if (getSueldo() < 1500) {
+            return "Aviso: el sueldo es bajo, solicita un aumento.";
+        }
+        return "El sueldo es correcto.";
+    }
+
 }

@@ -133,6 +133,39 @@ public class App {
     }
 
     public static void menuQuimico(Scanner sc, Quimico quimico) {
-        System.out.println("En construccion.");
+        int opcion = -1;
+        while (opcion != 0) {
+            System.out.println("\n--- MENU QUIMICO ---");
+            System.out.println("1. Identificacion");
+            System.out.println("2. Calculo basico");
+            System.out.println("3. Estado del sueldo");
+            System.out.println("4. Añadir elemento");
+            System.out.println("5. Trabajar (voltear la lista)");
+            System.out.println("6. Trabajo dual (ordenar y eliminar el mayor)");
+            System.out.println("0. Volver");
+            System.out.print("Opcion: ");
+            opcion = sc.nextInt();
+
+            if (opcion == 1) {
+                System.out.println(quimico.identificacion());
+            } else if (opcion == 2) {
+                System.out.print("Primer numero: ");
+                int a = sc.nextInt();
+                System.out.print("Segundo numero: ");
+                int b = sc.nextInt();
+                System.out.println(quimico.calculoBasico(a, b));
+            } else if (opcion == 3) {
+                System.out.println(quimico.estadoSueldo());
+            } else if (opcion == 4) {
+                System.out.print("Elemento: ");
+                String elemento = sc.next();
+                quimico.anadirElemento(elemento);
+                System.out.println("Elementos: " + quimico.getElementos());
+            } else if (opcion == 5) {
+                System.out.println(quimico.trabajar());
+            } else if (opcion == 6) {
+                System.out.println(quimico.trabajoDual());
+            }
+        }
     }
 }
